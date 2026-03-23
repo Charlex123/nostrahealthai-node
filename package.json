@@ -1,0 +1,66 @@
+{
+  "name": "@nostrahealthai/sdk",
+  "version": "2.1.0",
+  "description": "Official TypeScript/JavaScript SDK for NostraHealthAI Medical AI Platform - Skin Analysis, Eye Diagnosis, Wound Tracking, Drug Verification, and FHIR",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/cjs/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "npm run build:cjs && npm run build:esm",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "nostra",
+    "health",
+    "ai",
+    "medical",
+    "healthcare",
+    "sdk",
+    "skin-analysis",
+    "eye-diagnosis",
+    "wound-healing",
+    "drug-verification",
+    "fhir",
+    "hl7",
+    "telemedicine",
+    "hospital",
+    "clinical"
+  ],
+  "author": "Nostra Health",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nostrahealthai/sdk"
+  },
+  "homepage": "https://docs.nostrahealthai.com/sdk",
+  "dependencies": {
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "sideEffects": false
+}
